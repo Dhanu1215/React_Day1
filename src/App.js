@@ -3,13 +3,17 @@ import './App.css';
 
 class App extends React.Component {
 
-  render(){
+  constructor() {
+    super()
+    this.state = {
+      tital : "Hello From Bridgelabz"
+    }
+  }
+  render() {
     return(
-
       <div>
-          <h1>Hello From Bridgelabz</h1>
+          <h1>{this.state.tital}</h1>
       </div>
-
     );
   }
 }
