@@ -17,6 +17,12 @@ img{
   margin: 0 auto;
   width: 25%;
 }
+input{
+  justify-content: center;
+  margin-top: 0%;
+  margin-left: 40%;
+  width: 20%;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
