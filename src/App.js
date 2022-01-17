@@ -7,9 +7,9 @@ class App extends React.Component {
     return(
 
       <div>
-          <h1>Hello from Bridgelabz</h1>
+          <h1>Hello From Bridgelabz</h1>
       </div>
-      
+
     );
   }
 }
