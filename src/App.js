@@ -7,7 +7,8 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      userName : ''
+      userName : '',
+      nameError : ''
     }
   }
   
@@ -19,13 +20,21 @@ class App extends React.Component {
   
   onNameChange = (event) =>{
     console.log("value is", event.target.value)
+    const nameRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{2,}$');
     // Set the tital using setState method
     this.setState({userName : event.target.value})
+    //Ensure input username valid or not
+    if(nameRegex.test(event.target.value)) {
+      this.setState({nameError: ''})
+    }
+    else {
+      this.setState({nameError: 'Name is Incorrect'})
+    }
 }
 
   render() {
     return(
-      <>
+      <div>
         <div>
           <h1>Hello {this.state.userName} from Bridgelabz</h1>
           <img src={logo} onClick={this.onClick} 
@@ -33,8 +42,9 @@ class App extends React.Component {
         </div>
         <div>
           <input onChange={this.onNameChange}/>
+          <span className='error-output'>{this.state.nameError}</span>
         </div>
-      </>
+      </div>
     );
   }
 }
